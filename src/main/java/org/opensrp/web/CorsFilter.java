@@ -1,21 +1,11 @@
 package org.opensrp.web;
 
-import java.io.IOException;
-
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.opensrp.common.AllConstants.HTTP;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import org.springframework.web.filter.OncePerRequestFilter;
 
 @Component(value = "CORSFilter")
-public class CorsFilter extends OncePerRequestFilter {
+public class CorsFilter /*extends OncePerRequestFilter*/ {
 
-	@Value("#{opensrp['opensrp.cors.allowed.source']}")
+	/*@Value("#{opensrp['opensrp.cors.allowed.source']}")
 	private String opensrpAllowedSources;
 
 	@Value("#{opensrp['opensrp.cors.max.age']}")
@@ -35,5 +25,5 @@ public class CorsFilter extends OncePerRequestFilter {
 				"origin, content-type, accept, x-requested-with, Authorization");
 		response.addHeader(ACCESS_CONTROL_ALLOW_MAX_AGE, String.valueOf(corsMaxAge));// 1 min
 		filterChain.doFilter(request, response);
-	}
+	} */
 }

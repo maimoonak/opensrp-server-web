@@ -1,20 +1,9 @@
 package org.opensrp.web.controller;
 
-import static org.opensrp.web.HttpHeaderFactory.allowOrigin;
-import static org.springframework.http.HttpStatus.OK;
-
-import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TimeZone;
-
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.mysql.jdbc.StringUtils;
 import javax.servlet.http.HttpServletRequest;
-
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.joda.time.DateTime;
 import org.json.JSONArray;
@@ -53,9 +42,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.mysql.jdbc.StringUtils;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TimeZone;
+
+import static org.opensrp.web.HttpHeaderFactory.allowOrigin;
+import static org.springframework.http.HttpStatus.OK;
 
 @Controller
 public class UserController {

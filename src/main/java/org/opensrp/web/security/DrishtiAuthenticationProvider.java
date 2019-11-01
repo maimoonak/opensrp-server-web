@@ -1,12 +1,8 @@
 package org.opensrp.web.security;
 
-import static java.text.MessageFormat.format;
-
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
+import ch.lambdaj.Lambda;
+import ch.lambdaj.function.convert.Converter;
 import javax.annotation.Resource;
-
 import org.opensrp.api.domain.User;
 import org.opensrp.connector.openmrs.service.OpenmrsUserService;
 import org.slf4j.Logger;
@@ -19,15 +15,17 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.authentication.encoding.PasswordEncoder;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Component;
 
-import ch.lambdaj.Lambda;
-import ch.lambdaj.function.convert.Converter;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import static java.text.MessageFormat.format;
 
 @Component
 public class DrishtiAuthenticationProvider implements AuthenticationProvider {
